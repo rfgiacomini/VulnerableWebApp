@@ -1,6 +1,6 @@
 name: security
 
-on: [pull_request_target]
+on: [pull_request]
 jobs:
   bandit:
     runs-on: [self-hosted, public, linux, x64]
