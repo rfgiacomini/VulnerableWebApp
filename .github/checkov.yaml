@@ -1,7 +1,2 @@
-enable-secret-scan-all-files: true
-framework:
-- secrets
-quiet: true
 skip-check:
 - CKV2_AWS_5
-summary-position: bottom
