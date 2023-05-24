@@ -40,7 +40,6 @@ resource "aws_security_group" "main" {
   // allows traffic from the SG itself
   ingress {
       from_port = 0
-    + description = "What does this rule enable"
       to_port = 0
       protocol = "-1"
       self = true
@@ -52,7 +51,7 @@ resource "aws_security_group" "main" {
       to_port         = 5432
       protocol        = "tcp"
       cidr_blocks     = ["10.0.0.0/16"]
-    + description    = "CIDR"
+      description     = "CIDR"
   }
 
   ingress {
@@ -60,7 +59,7 @@ resource "aws_security_group" "main" {
       to_port         = 5432
       protocol        = "tcp"
       cidr_blocks     = ["177.190.210.230/32"]
-    + description     = "HOLIVANI"
+      description     = "HOLIVANI"
   }
 
   ingress {
