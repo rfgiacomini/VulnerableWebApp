@@ -1,14 +1,15 @@
 name: security
 
-on:
-  pull_request_target:
-  push:
-    branches:
-      - main
-
-permissions: read-all
-
+on: [pull_request_target]
 jobs:
+  bandit:
+    runs-on: [self-hosted, public, linux, x64]
+    steps:
+      - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab  # v3
+      - name: security test
+        uses: jpetrucciani/bandit-check@a3625769b94d074865d7c410b9ba4019b4c80681  # v1
+        with:
+          path: 'checkov'
   trufflehog-secrets:
     runs-on: [self-hosted, public, linux, x64]
     steps:
