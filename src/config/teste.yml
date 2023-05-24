@@ -1,0 +1,15 @@
+# Arquivo de configuração para acesso a credenciais da AWS
+
+# Perfil padrão
+default:
+  # ID da chave de acesso
+  aws_access_key_id: rafael.teste
+  # Chave de acesso secreta
+  aws_secret_access_key: jpjyW9NntYpmyuFLZE5s
+
+# Perfil adicional
+profile2:
+  # ID da chave de acesso para o perfil adicional
+  aws_access_key_id: ACCESS_KEY_ID_PERFIL2
+  # Chave de acesso secreta para o perfil adicional
+  aws_secret_access_key: SECRET_ACCESS_KEY_PERFIL2
