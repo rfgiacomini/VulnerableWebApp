@@ -15,5 +15,5 @@ jobs:
         with:
           directory: src
           framework: terraform
-        skip-check: CKV2_AWS_5
+          skip-check: CKV2_AWS_5
           
