@@ -40,6 +40,7 @@ resource "aws_security_group" "main" {
   // allows traffic from the SG itself
   ingress {
       from_port = 0
+    + description = "What does this rule enable"
       to_port = 0
       protocol = "-1"
       self = true
@@ -51,7 +52,7 @@ resource "aws_security_group" "main" {
       to_port         = 5432
       protocol        = "tcp"
       cidr_blocks     = ["10.0.0.0/16"]
-      description     = "CIDR"
+    + description    = "CIDR"
   }
 
   ingress {
@@ -59,7 +60,7 @@ resource "aws_security_group" "main" {
       to_port         = 5432
       protocol        = "tcp"
       cidr_blocks     = ["177.190.210.230/32"]
-      description     = "HOLIVANI"
+    + description     = "HOLIVANI"
   }
 
   ingress {
@@ -67,7 +68,7 @@ resource "aws_security_group" "main" {
       to_port         = 5432
       protocol        = "tcp"
       cidr_blocks     = ["128.201.141.148/32"]
-      description     = "DERSO"
+    + description    = "DERSO"
   }
 
   ingress {
@@ -75,7 +76,7 @@ resource "aws_security_group" "main" {
       to_port         = 5432
       protocol        = "tcp"
       cidr_blocks     = ["189.47.26.85/32"]
-      description     = "Bussola"
+    + description     = "Bussola"
   }
 
   ingress {
@@ -83,7 +84,7 @@ resource "aws_security_group" "main" {
       to_port         = 5432
       protocol        = "tcp"
       cidr_blocks     = ["177.185.111.130/32"]
-      description     = "Isabela Nascimento"
+    + description     = "Isabela Nascimento"
   }
 
   ingress {
@@ -91,7 +92,7 @@ resource "aws_security_group" "main" {
       to_port         = 5432
       protocol        = "tcp"
       cidr_blocks     = ["170.81.131.226/32","201.48.192.153/32"]
-      description     = "VPN Escritorio"
+    + description     = "VPN Escritorio"
   }
 
   ingress {
@@ -99,7 +100,7 @@ resource "aws_security_group" "main" {
       to_port         = 5432
       protocol        = "tcp"
       cidr_blocks     = ["131.196.78.153/32"]
-      description     = "MATEUS"
+    + description     = "MATEUS"
   }
 
   ingress {
@@ -107,7 +108,7 @@ resource "aws_security_group" "main" {
       to_port         = 5432
       protocol        = "tcp"
       cidr_blocks     = ["177.70.251.141/32"]
-      description     = "Gabriela Rodrigues"
+    + description     = "Gabriela Rodrigues"
   }
 
   ingress {
@@ -115,7 +116,7 @@ resource "aws_security_group" "main" {
       to_port         = 5432
       protocol        = "tcp"
       cidr_blocks     = ["187.19.234.139/32"]
-      description     = "Ranieri Filho"
+    + description     = "Ranieri Filho"
   }
 
   ingress {
@@ -123,7 +124,7 @@ resource "aws_security_group" "main" {
       to_port         = 5432
       protocol        = "tcp"
       cidr_blocks     = ["200.160.82.141/32"]
-      description     = "Saimon"
+    + description    = "Saimon"
   }
 
   ingress {
@@ -131,7 +132,7 @@ resource "aws_security_group" "main" {
       to_port         = 5432
       protocol        = "tcp"
       cidr_blocks     = ["131.196.79.89/32"]
-      description     = "Maiscash - Mateus"
+    + description     = "Maiscash - Mateus"
   }
 
   ingress {
@@ -139,7 +140,7 @@ resource "aws_security_group" "main" {
       to_port         = 5432
       protocol        = "tcp"
       cidr_blocks     = ["138.99.33.83/32"]
-      description     = "Patrick"
+    + description     = "Patrick"
   }
 
 
@@ -150,5 +151,6 @@ resource "aws_security_group" "main" {
     to_port = 0
     protocol = "-1"
     cidr_blocks = ["0.0.0.0/0"]
++ description     = "outbound internet access"
   }
 }
