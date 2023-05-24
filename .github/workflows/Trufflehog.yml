@@ -1,14 +1,7 @@
-name: TruffleHog Secrets Scan
-on: [pull_request]
-jobs:
-  TruffleHog:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+- name: TruffleHog Secrets Scan
+        uses: trufflesecurity/trufflehog@2b1c42ceb17595fd68e183e881d9b70d84e9d3c1
         with:
-          fetch-depth: 0
-      - name: TruffleHog OSS
-        uses: trufflesecurity/trufflehog@main
-        with:
+          path: ./
+          base: ${{ github.event.repository.default_branch }}
+          head: HEAD
           extra_args: --debug --only-verified
