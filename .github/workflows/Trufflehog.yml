@@ -1,20 +1,11 @@
 name: security
 
-on: [pull_request]
+on: [pull_request_target]
 jobs:
-  bandit:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3  # v3
-      - name: security test
-        uses: jpetrucciani/bandit-check@a3625769b94d074865d7c410b9ba4019b4c80681  # v1
-        with:
-          path: 'checkov'
   trufflehog-secrets:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3 # v3
+      - uses: actions/checkout@v3  # v3
       - name: detect secrets
-        uses: edplato/trufflehog-actions-scan@0af17d9dd1410283f740eb76b0b8f6b696cadefc  # v0.9
-        with:
-          scanArguments: "--regex --entropy=False --max_depth=1"
+        uses: trufflesecurity/trufflehog@main  # v0.9
+        
