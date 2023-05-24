@@ -31,6 +31,7 @@ module "rds-single-postgres" {
 resource "aws_security_group" "main" {
   name = "rds-postgres-homolog"
   description = "Security Group for RDS Aurora Postgres"
+  security_groups = [aws_security_group.ok_sg.id]
   vpc_id = var.vpc_id
   tags = {
     Name = "rds-postgres-homolog"
