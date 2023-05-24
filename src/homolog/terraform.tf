@@ -31,6 +31,7 @@ module "rds-single-postgres" {
 resource "aws_security_group" "main" {
   name = "rds-postgres-homolog"
   description = "Security Group for RDS Aurora Postgres"
+  security_groups = var.vpc_security_group_ids
   vpc_id = var.vpc_id
   tags = {
     Name = "rds-postgres-homolog"
@@ -150,5 +151,6 @@ resource "aws_security_group" "main" {
     to_port = 0
     protocol = "-1"
     cidr_blocks = ["0.0.0.0/0"]
+    description     = "Outbound internet access"
   }
 }
