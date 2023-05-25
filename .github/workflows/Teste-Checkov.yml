@@ -1,7 +1,7 @@
 name: Checkov
 on: [pull_request]
 jobs:
-  build:
+  Check-iac:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
