@@ -31,11 +31,11 @@ module "rds-single-postgres" {
 resource "aws_security_group" "main" {
   name = "rds-postgres-homolog"
   description = "Security Group for RDS Aurora Postgres"
-  security_groups = var.vpc_security_group_ids
   vpc_id = var.vpc_id
   tags = {
     Name = "rds-postgres-homolog"
     Environment = var.environment
+    security_groups = var.vpc_security_group_ids
   }
 
   // allows traffic from the SG itself

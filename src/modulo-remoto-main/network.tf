@@ -11,12 +11,15 @@ resource "azurerm_network_security_group" "nsg" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "22"
-    source_address_prefix      = "*"
+    source_address_prefix      = "177.54.205.117"
     destination_address_prefix = "*"
   }
 
   tags = local.common_tags
 }
+
+
+
 
 resource "azurerm_subnet_network_security_group_association" "snsga" {
   subnet_id                 = module.network.vnet_subnets[0]
