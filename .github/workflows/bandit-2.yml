@@ -8,7 +8,7 @@ jobs:
       - name: Bandit-run
         uses: jpetrucciani/bandit-check@a3625769b94d074865d7c410b9ba4019b4c80681
         with:
-          path: "."
+          path: src/*
           level: high
           confidence: high
           exit_zero: true      
