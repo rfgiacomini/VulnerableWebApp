@@ -14,14 +14,14 @@ resource "aws_security_group" "example_sg" {
     from_port   = 22  # SSH
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["172.168.0.23/32"]
   }
 
   ingress {
     from_port   = 80  # HTTP
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["177.10.192.1/32"]
   }
 
   egress {
@@ -34,6 +34,7 @@ resource "aws_security_group" "example_sg" {
 
 # Criação da instância EC2
 resource "aws_instance" "example_instance" {
+  monitoring = true
   ami           = "ami-0c94855ba95c71c99"  # Substitua pela AMI desejada
   instance_type = "t2.micro"
   key_name      = "example-key"  # Substitua pelo nome da sua chave SSH
