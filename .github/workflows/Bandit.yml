@@ -8,4 +8,4 @@ jobs:
       - name: security test
         uses: jpetrucciani/bandit-check@a3625769b94d074865d7c410b9ba4019b4c80681  # v1
         with:
-          path: './'
+          path: src
