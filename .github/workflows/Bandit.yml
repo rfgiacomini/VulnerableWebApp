@@ -1,0 +1,17 @@
+name: bandit
+on: [pull_request]
+jobs:
+  Check-iac:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mdegis/bandit-action@v1
+        with:
+          python-version: 3.8
+      - name: Test with Checkov
+        id: checkov
+        uses: bridgecrewio/checkov-action@master
+        with:
+          path: "."
+          level: high
+          confidence: high
+          exit_zero: true
