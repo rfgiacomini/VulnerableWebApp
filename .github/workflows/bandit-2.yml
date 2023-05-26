@@ -1,15 +1,16 @@
 name: Security check - Bandit
 on: [pull_request]
 jobs:
-  build:
+  Bandit-2:
     runs-on: ubuntu-latest
     steps:
       - uses: shundor/bandit-action@v1
-      - name: Bandit - run
-        users: actions/setup-python@v1
-      with: 
-        path: "."
-        level: high
-        confidence: high
-        exit_zero: true      
+      - name: Bandit-run
+        uses: actions/setup-python@v1
+        with:
+          path: "."
+          level: high
+          confidence: high
+          exit_zero: true      
+
 
