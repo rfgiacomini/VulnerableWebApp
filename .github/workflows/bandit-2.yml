@@ -4,7 +4,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      uses: shundor/bandit-action@v1
+      - uses: shundor/bandit-action@v1
+      - name: Bandit - run
+        users: actions/setup-python@v1
       with: 
         path: "."
         level: high
