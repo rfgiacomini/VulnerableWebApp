@@ -1,17 +1,8 @@
 name: bandit
 on: [pull_request]
 jobs:
-  Check-iac:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: mdegis/bandit-action@v1
-        with:
-          python-version: 3.8
-      - name: Test with Checkov
-        id: checkov
-        uses: bridgecrewio/checkov-action@master
-        with:
-          path: "."
-          level: high
-          confidence: high
-          exit_zero: true
+  - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab  # v3
+  - name: security test
+    uses: jpetrucciani/bandit-check@a3625769b94d074865d7c410b9ba4019b4c80681  # v1
+    with:
+      path: 'checkov'
