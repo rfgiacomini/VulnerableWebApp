@@ -1,11 +1,11 @@
-name: bandit
+name: bandit2
 on: [pull_request]
 jobs:
-  bandit:
+  bandit2:
     runs-on: ubuntu-latest
     steps:
-      - uses: mdegis/bandit-action@v1  # v3
       - name: security test
+      - uses: mdegis/bandit-action@v1  # v3
         with:
           path: src
           GITHUB_TOKEN: ${{ secrets.MAIN_GITHUB_TOKEN }}
@@ -14,4 +14,5 @@ jobs:
           confidence: high
           exit_zero: true
 
-            
+
+
