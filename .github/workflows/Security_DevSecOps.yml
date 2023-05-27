@@ -42,4 +42,17 @@ jobs:
             echo "-----------------------------Add Changelog!!!------------------------------"
           fi;
           
-  
+    TruffleHog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: TruffleHog OSS
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: develop
+          head: HEAD
+          extra_args: --debug --only-verified
