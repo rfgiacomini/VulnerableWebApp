@@ -28,6 +28,24 @@ jobs:
         with:
           fetch-depth: 0
 
-
+      - name: ChangeLOG
+        if: ${{ github.head_ref != 'master' && github.head_ref != 'develop' }}
+        run:  |
+          source ./ci/ssh_auth_upgrade.sh
+          git clone git@github.com:rfgiacomini/changelog.git
+          FILE=$(git diff --name-only origin/develop...HEAD | grep -E 'CHANGELOG\.md' -c)
+          if [[ $FILE == "1" ]];
+          then
+            echo ""
+            cat ./changelog/changelog/sucesso
+            exit 0
+          else
+            echo ""
+            cat ./changelog/changelog/negativo
+            echo ""
+            echo "---------------------------------------------------------------------------"
+            echo "-----------------------------Add Changelog!!!------------------------------"
+          fi;
+          rm -rf changelog/
 
   
