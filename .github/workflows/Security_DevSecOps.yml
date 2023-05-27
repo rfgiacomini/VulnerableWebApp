@@ -5,7 +5,7 @@ on:
     types: ['opened', 'edited', 'reopened', 'synchronize', 'ready_for_review']
 
 env:
-  MASTER_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+  DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
  
 
 jobs:
