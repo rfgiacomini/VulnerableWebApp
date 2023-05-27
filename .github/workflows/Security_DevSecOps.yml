@@ -42,7 +42,7 @@ jobs:
             echo "-----------------------------Add Changelog!!!------------------------------"
           fi;
   
-  GitGuardian scan:
+  GitGuardian-scan:
     name: GitGuardian scan
     runs-on: ubuntu-latest
     steps:
