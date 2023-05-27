@@ -53,6 +53,7 @@ jobs:
       - name: TruffleHog OSS
         uses: trufflesecurity/trufflehog@main
         with:
+          path: ./
           base: develop
           head: HEAD
           extra_args: --debug --only-verified
