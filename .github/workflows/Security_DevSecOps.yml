@@ -9,7 +9,7 @@ jobs:
 
   changelog:
 
-    if: (! github.event.pull_request.draft) && github.head_ref != 'master' && github.head_ref != 'develop'
+    if: (! github.event.pull_request.draft) && github.head_ref != 'develop'
 
     defaults:
       run:
@@ -26,7 +26,7 @@ jobs:
           fetch-depth: 0
 
       - name: ChangeLOG
-        if: ${{ github.head_ref != 'master' && github.head_ref != 'develop' }}
+        if: ${{ github.head_ref != 'develop' }}
         run:  |
           FILE=$(git diff --name-only origin/develop...HEAD | grep -E 'CHANGELOG\.md' -c)
           if [[ $FILE == "1" ]];
