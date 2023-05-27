@@ -1,0 +1,51 @@
+name: DevSecOps
+
+on:
+  pull_request:
+    types: ['opened', 'edited', 'reopened', 'synchronize', 'ready_for_review']
+
+env:
+  MASTER_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+ 
+
+jobs:
+
+  changelog:
+
+    if: (! github.event.pull_request.draft) && github.head_ref != 'master' && github.head_ref != 'develop'
+
+    defaults:
+      run:
+        shell: bash
+
+    name: ChangeLOG
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: ChangeLOG
+        if: ${{ github.head_ref != 'master' && github.head_ref != 'develop' }}
+        run:  |
+          # source ./ci/ssh_auth_upgrade.sh
+          # git clone git@github.com:rfgiacomini/changelog.git
+          FILE=$(git diff --name-only origin/develop...HEAD | grep -E 'CHANGELOG\.md' -c)
+          if [[ $FILE == "1" ]];
+          then
+            echo ""
+            # cat ./changelog/changelog/sucesso
+            exit 0
+          else
+            echo ""
+            #cat ./changelog/changelog/negativo
+            echo ""
+            echo "---------------------------------------------------------------------------"
+            echo "-----------------------------Add Changelog!!!------------------------------"
+          fi;
+          # rm -rf changelog/
+
+  
