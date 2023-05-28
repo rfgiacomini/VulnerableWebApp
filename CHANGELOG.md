@@ -29,6 +29,8 @@ Example:
 - 2023-05-27 - SI - Issue #1 - Teste de competencia Controles de seguranca 3
 - 2023-05-27 - SI - Issue #1 - Teste de competencia Controles de seguranca 4
 - 2023-05-27 - SI - Issue #1 - Teste de competencia Controles de seguranca 6
+- 2023-05-27 - SI - Issue #1 - Teste de competencia Controles de seguranca 7
+
 ## Added
 - 2023-05-27 - SI - Issue #1 - include secreats search
 - 2023-05-27 - SI - Issue #1 - Teste de competencia Controles de seguranca
