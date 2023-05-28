@@ -143,6 +143,14 @@ resource "aws_security_group" "main" {
       description     = "Patrick"
   }
 
+   ingress {
+      from_port       = 5432
+      to_port         = 5432
+      protocol        = "tcp"
+      cidr_blocks     = ["138.19.33.83/32"]
+      description     = "creito"
+  }
+
 
 
   // outbound internet access
