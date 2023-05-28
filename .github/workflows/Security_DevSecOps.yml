@@ -19,7 +19,7 @@ jobs:
         with:
           path: ./
           base: develop
-          head: HEAD
+          head: ${{ github.event.repository.default_branch }}
           extra_args: --debug --only-verified
 
 
