@@ -41,7 +41,7 @@ jobs:
           GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
 
   Checkov-scan:
-    Check-iac:
+    Check-Terraform:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
