@@ -30,6 +30,7 @@ Example:
 - 2023-05-27 - SI - Issue #1 - Teste de competencia Controles de seguranca 4
 - 2023-05-27 - SI - Issue #1 - Teste de competencia Controles de seguranca 6
 - 2023-05-27 - SI - Issue #1 - Teste de competencia Controles de seguranca 7
+- 2023-05-27 - SI - Issue #1 - Include_Scan_Checkov_1
 
 ## Added
 - 2023-05-27 - SI - Issue #1 - include secreats search
