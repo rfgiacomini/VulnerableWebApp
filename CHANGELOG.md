@@ -27,7 +27,7 @@ Example:
 ## Changed
 
 ## Added
-
+- 2023-05-27 - SI - Issue #1 - include secreats search
 
 ## Fixed
 

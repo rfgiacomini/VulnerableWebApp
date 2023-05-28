@@ -42,4 +42,48 @@ jobs:
             echo "-----------------------------Add Changelog!!!------------------------------"
           fi;
           
+  TruffleHog:
+    runs-on: ubuntu-latest
+    needs: changelog
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1000
+      - name: TruffleHog OSS
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: develop
+          head: HEAD
+          extra_args: --debug --only-verified
+
+
+  GitGuardian-scan:
+    name: GitGuardian scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 50 # fetch all history so multiple commits can be scanned
+      - name: GitGuardian scan
+        uses: GitGuardian/ggshield-action@master
+        env:
+          GITHUB_PUSH_BEFORE_SHA: ${{ github.event.before }}
+          GITHUB_PUSH_BASE_SHA: ${{ github.event.base }}
+          GITHUB_PULL_BASE_SHA:  ${{ github.event.pull_request.base.sha }}
+          GITHUB_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
   
+  Gitleaks:
+    name: gitleaks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
+          
