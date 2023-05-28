@@ -76,7 +76,7 @@ jobs:
           GITHUB_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
           GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
   
-  jobs:
+  Gitleaks:
     scan:
       name: gitleaks
       runs-on: ubuntu-latest
