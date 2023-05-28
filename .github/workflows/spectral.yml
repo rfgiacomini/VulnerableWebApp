@@ -1,7 +1,8 @@
-name: Main
+name: spectral
+
 on:
-  push:
-    branches: [ Develop ]
+  pull_request:
+    types: ['opened']
     
 env:
   SPECTRAL_DSN: ${{ secrets.SPECTRAL_DSN }}
