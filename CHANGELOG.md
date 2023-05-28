@@ -25,7 +25,7 @@ Example:
 ## [Unreleased]
 
 ## Changed
-
+- 2023-05-27 - SI - Issue #1 - Teste de competencia Controles de seguranca 2
 ## Added
 - 2023-05-27 - SI - Issue #1 - include secreats search
 - 2023-05-27 - SI - Issue #1 - Teste de competencia Controles de seguranca
