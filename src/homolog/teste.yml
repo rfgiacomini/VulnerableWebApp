@@ -15,8 +15,16 @@ profile2:
   aws_secret_access_key: 5&Te6S52wUkJ
 
 # Perfil adicional
-profile2:
+profile3:
   # ID da chave de acesso para o perfil adicional
   aws_access_key_id: admin
   # Chave de acesso secreta para o perfil adicional
   aws_secret_access_key: 7gHZrde@Jc9*V2Rhpg9a310tu0!Ef
+
+
+# Perfil adicional
+profile4:
+  # ID da chave de acesso para o perfil adicional
+  aws_access_key_id: adm
+  # Chave de acesso secreta para o perfil adicional
+  aws_secret_access_key: *V2Rhpg9a310tu0!Ef
