@@ -38,6 +38,7 @@ Example:
 - 2023-05-27 - SI - Issue #1 - Teste de competencia Controles de seguranca
 - 2023-05-27 - SI - Issue #1 - Public_teste
 - 2023-05-27 - SI - Issue #1 - Include_Scan_Checkov
+- 2023-05-28 - SI - Issue #1 - Include_Scan_spectralops
 
 ## Fixed
 
