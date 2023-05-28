@@ -1,4 +1,4 @@
-name: DevSecOps
+name: DevSecOps_logs
 
 on:
   pull_request:
