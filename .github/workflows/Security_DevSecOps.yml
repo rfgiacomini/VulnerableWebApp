@@ -41,22 +41,19 @@ jobs:
           GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
 
   Checkov-scan:
-    name: Checkov
-    on: [pull_request]
-    jobs:
-      Check-iac:
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v3
-          - name: Set up Python 3.8
-            uses: actions/setup-python@v1
-            with:
-              python-version: 3.8
-          - name: Test with Checkov
-            id: checkov
-            uses: bridgecrewio/checkov-action@master
-            with:
-              directory: src
-              framework: terraform
-              config_file: .github/checkov.yaml
-  
+    Check-iac:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: Test with Checkov
+        id: checkov
+        uses: bridgecrewio/checkov-action@master
+        with:
+          directory: src
+          framework: terraform
+          config_file: .github/checkov.yaml
+
