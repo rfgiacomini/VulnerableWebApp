@@ -3,13 +3,13 @@
 # Perfil padrão
 default:
   # ID da chave de acesso
-  aws_access_key_id: ACCESS_KEY_ID_PERFIL
+  aws_access_key_id: administrator
   # Chave de acesso secreta
-  aws_secret_access_key: SECRET_ACCESS_KEY_PERFIL
+  aws_secret_access_key: 5&Te6S52wUkJ
 
 # Perfil adicional
 profile2:
   # ID da chave de acesso para o perfil adicional
-  aws_access_key_id: ACCESS_KEY_ID_PERFIL2
+  aws_access_key_id: administrador
   # Chave de acesso secreta para o perfil adicional
-  aws_secret_access_key: SECRET_ACCESS_KEY_PERFIL2
+  aws_secret_access_key: 5&Te6S52wUkJ
