@@ -4,7 +4,7 @@ jobs:
   Check-iac:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: bridgecrewio/checkov-action@master
       - name: Set up Python 3.8
         uses: actions/setup-python@v1
         with:
