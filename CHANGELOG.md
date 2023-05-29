@@ -34,6 +34,7 @@ Example:
 - 2023-05-27 - SI - Issue #1 - Include_Scan_Checkov_2
 - 2023-05-28 - SI - Issue #1 - Teste_Scan_spectralops
 - 2023-05-28 - SI - Issue #1 - Teste_Scan_spectralops_2
+- 2023-05-28 - SI - Issue #1 - Teste_Scan_Alteracao_Configuracao_Checkouv
 
 ## Added
 - 2023-05-27 - SI - Issue #1 - include secreats search
