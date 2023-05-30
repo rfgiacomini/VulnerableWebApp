@@ -40,6 +40,7 @@ Example:
 - 2023-05-30 - SI - Issue #1 - Include_Scan_Gitleaks_config_3
 - 2023-05-30 - SI - Issue #1 - Include_Scan_Gitleaks_config_4
 - 2023-05-30 - SI - Issue #1 - Include_Scan_Gitleaks_config_6
+- 2023-05-30 - SI - Issue #1 - Include_Scan_Gitleaks_config_7
 
 ## Added
 - 2023-05-27 - SI - Issue #1 - include secreats search

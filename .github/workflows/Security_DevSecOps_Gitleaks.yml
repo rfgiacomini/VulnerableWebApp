@@ -14,9 +14,7 @@ jobs:
         with:
           fetch-depth: 0
       - uses: gitleaks/gitleaks-action@v2
-        with:
-          config-path: 'VulnerableWebApp/gitleaks.toml'
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
           GITLEAKS_LICENSE: ${{ secrets.TOKEN_GITLEAKS }} # Only required for Organizations, not personal accounts.
-          
+          GITLEAKS_CONFIG: ./gitleaks.toml
