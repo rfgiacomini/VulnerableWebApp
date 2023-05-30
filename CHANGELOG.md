@@ -44,6 +44,8 @@ Example:
 - 2023-05-27 - SI - Issue #1 - Include_Scan_Checkov
 - 2023-05-28 - SI - Issue #1 - Include_Scan_spectralops
 - 2023-05-29 - SI - Issue #1 - Include_Scan_Gitleaks
+- 2023-05-30 - SI - Issue #1 - Include_Scan_Gitleaks_config
+
 
 ## Fixed
 
