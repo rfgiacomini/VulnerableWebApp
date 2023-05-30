@@ -1,19 +1,29 @@
+# This file has been auto-generated. Do not edit manually.
+# If you would like to contribute new rules, please use 
+# cmd/generate/config/main.go and follow the contributing guidelines
+# at https://github.com/zricethezav/gitleaks/blob/master/CONTRIBUTING.md
+
+# This is the default gitleaks configuration file.
+# Rules and allowlists are defined within this file.
+# Rules instruct gitleaks on what should be considered a secret.
+# Allowlists instruct gitleaks on what is allowed, i.e. not a secret.
+
 title = "gitleaks config"
 
 [allowlist]
 description = "global allow lists"
 paths = [
-    '''tests/''',
-]    
-
-
-
-
-files = [
-
-    
+    '''gitleaks.toml''',
+    '''(.*?)(jpg|gif|doc|docx|zip|xls|pdf|bin|svg|socket)$''',
+    '''(go.mod|go.sum)$''',
+    '''gradle.lockfile''',
+    '''node_modules''',
+    '''package-lock.json''',
+    '''pnpm-lock.yaml''',
+    '''Database.refactorlog''',
+    '''vendor''',
 ]
-   
+
 [[rules]]
 description = "Adafruit API Key"
 id = "adafruit-api-key"
@@ -107,6 +117,15 @@ regex = '''(?i)(?:atlassian|confluence|jira)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[
 secretGroup = 1
 keywords = [
     "atlassian","confluence","jira",
+]
+
+[[rules]]
+description = "Authress Service Client Access Key"
+id = "authress-service-client-access-key"
+regex = '''(?i)\b((?:sc|ext|scauth|authress)_[a-z0-9]{5,30}\.[a-z0-9]{4,6}\.acc_[a-z0-9-]{10,32}\.[a-z0-9+/_=-]{30,120})(?:['|\"|\n|\r|\s|\x60|;]|$)'''
+secretGroup = 1
+keywords = [
+    "sc_","ext_","scauth_","authress_",
 ]
 
 [[rules]]
@@ -233,6 +252,15 @@ keywords = [
 ]
 
 [[rules]]
+description = "Defined Networking API token"
+id = "defined-networking-api-token"
+regex = '''(?i)(?:dnkey)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:=|\|\|:|<=|=>|:)(?:'|\"|\s|=|\x60){0,5}(dnkey-[a-z0-9=_\-]{26}-[a-z0-9=_\-]{52})(?:['|\"|\n|\r|\s|\x60|;]|$)'''
+secretGroup = 1
+keywords = [
+    "dnkey",
+]
+
+[[rules]]
 description = "DigitalOcean OAuth Access Token"
 id = "digitalocean-access-token"
 regex = '''(?i)\b(doo_v1_[a-f0-9]{64})(?:['|\"|\n|\r|\s|\x60|;]|$)'''
@@ -347,7 +375,7 @@ keywords = [
 [[rules]]
 description = "EasyPost API token"
 id = "easypost-api-token"
-regex = '''EZAK(?i)[a-z0-9]{54}'''
+regex = '''\bEZAK(?i)[a-z0-9]{54}'''
 keywords = [
     "ezak",
 ]
@@ -355,7 +383,7 @@ keywords = [
 [[rules]]
 description = "EasyPost test API token"
 id = "easypost-test-api-token"
-regex = '''EZTK(?i)[a-z0-9]{54}'''
+regex = '''\bEZTK(?i)[a-z0-9]{54}'''
 keywords = [
     "eztk",
 ]
@@ -370,7 +398,7 @@ keywords = [
 ]
 
 [[rules]]
-description = "Facebook"
+description = "Facebook Access Token"
 id = "facebook"
 regex = '''(?i)(?:facebook)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:=|\|\|:|<=|=>|:)(?:'|\"|\s|=|\x60){0,5}([a-f0-9]{32})(?:['|\"|\n|\r|\s|\x60|;]|$)'''
 secretGroup = 1
@@ -473,7 +501,15 @@ keywords = [
     "aiza",
 ]
 
-
+[[rules]]
+description = "Generic API Key"
+id = "generic-api-key"
+regex = '''(?i)(?:key|api|token|secret|client|passwd|password|auth|access)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:=|\|\|:|<=|=>|:)(?:'|\"|\s|=|\x60){0,5}([0-9a-z\-_.=]{10,150})(?:['|\"|\n|\r|\s|\x60|;]|$)'''
+secretGroup = 1
+entropy = 3.5
+keywords = [
+    "key","api","token","secret","client","passwd","password","auth","access",
+]
 [rules.allowlist]
 stopwords= [
     "client",
@@ -2597,7 +2633,7 @@ keywords = [
 ]
 
 [[rules]]
-description = "Stripe"
+description = "Stripe Access Token"
 id = "stripe-access-token"
 regex = '''(?i)(sk|pk)_(test|live)_[0-9a-z]{10,32}'''
 keywords = [
@@ -2763,12 +2799,3 @@ keywords = [
     "zendesk",
 ]
 
-[[rules]]
-description = "Generic API Key"
-id = "generic-api-key"
-regex = '''(?i)(?:key|api|token|secret|client|passwd|password|auth|access)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:=|\|\|:|<=|=>|:)(?:'|\"|\s|=|\x60){0,5}([0-9a-z\-_.=]{10,150})(?:['|\"|\n|\r|\s|\x60|;]|$)'''
-secretGroup = 1
-entropy = 3.5
-keywords = [
-    "key","api","token","secret","client","passwd","password","auth","access",
-]
