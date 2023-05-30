@@ -6,6 +6,12 @@ paths = [
     '''tests/''',
 ]    
 
+source string = [
+    ./src
+
+]
+
+
 files = [
 
     
