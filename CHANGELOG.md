@@ -38,6 +38,7 @@ Example:
 - 2023-05-29 - SI - Issue #1 - Include_config_checkov
 - 2023-05-30 - SI - Issue #1 - Include_Scan_Gitleaks_config_2
 - 2023-05-30 - SI - Issue #1 - Include_Scan_Gitleaks_config_3
+- 2023-05-30 - SI - Issue #1 - Include_Scan_Gitleaks_config_4
 
 ## Added
 - 2023-05-27 - SI - Issue #1 - include secreats search
