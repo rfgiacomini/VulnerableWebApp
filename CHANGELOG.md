@@ -43,6 +43,7 @@ Example:
 - 2023-05-30 - SI - Issue #1 - Include_Scan_Gitleaks_config_7
 - 2023-05-30 - SI - Issue #1 - Include_Scan_Gitleaks_config_8
 - 2023-05-30 - SI - Issue #1 - Include_Scan_Gitleaks_config_9
+- 2023-05-30 - SI - Issue #1 - Include_Scan_Gitleaks_config_10
 
 
 ## Added
