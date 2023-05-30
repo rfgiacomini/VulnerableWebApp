@@ -15,6 +15,6 @@ jobs:
           fetch-depth: 0
       - uses: gitleaks/gitleaks-action@v2
         env:
-          GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY_2 }}
           GITLEAKS_LICENSE: ${{ secrets.TOKEN_GITLEAKS }} # Only required for Organizations, not personal accounts.
           GITLEAKS_CONFIG: ./gitleaks.toml
