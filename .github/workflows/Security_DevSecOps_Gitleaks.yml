@@ -14,3 +14,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
           GITLEAKS_LICENSE: ${{ secrets.TOKEN_GITLEAKS }} # Only required for Organizations, not personal accounts.
           SOURCE: "./src"
+          NO-GIT: true
