@@ -1,8 +1,5 @@
 name: gitleaks
-on: 
-  push:
-    branches:
-      - develop
+on: [pull_request]
 
 jobs:
   scan:
